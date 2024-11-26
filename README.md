@@ -12,9 +12,12 @@ The ROM interpolates a structure-property database generated with Crystal Plasti
 
 The module with the methods to run the model is found in ./SP_Ti64AM_ROM.
 
-In case of interest, the code used to create the regression model from the database is in ./Model_Creation/Create_model.py
-The database is saved in ./Model_Creation/microstructures_object_array_final.mat
-A jupyter notebook with data analysis of the database can be found in ./Model_Creation/Data_analysis_and_interpolation_study.ipynb
+In case of interest, the code used to create the regression model from the database is in "./Model_Creation/Create_model.py"
+
+The database is saved in "./Model_Creation/microstructures_object_array_final.mat"
+
+A jupyter notebook with data analysis of the database can be found in "./Model_Creation/Data_analysis_and_interpolation_study.ipynb"
+
 The code to generate the database using CP simulations can be found in: https://github.com/lreigbua/Generate_Ti64_PBF_Property_Database_with_Damask
 
 ## How to run example
