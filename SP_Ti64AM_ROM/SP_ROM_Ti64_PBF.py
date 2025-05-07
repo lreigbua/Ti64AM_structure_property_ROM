@@ -1,8 +1,11 @@
 import numpy as np
 from joblib import load
 import time
+from pathlib import Path
 
 def Calculate_Properties(input):
+
+    module_path = Path(__file__).resolve().parent
     
     ## Load Models and predict properties for a given microstructure,[0.4,0.33,0.,[0.4,0.33,0.09],[0.3,0.33,0.09],[0.5,0.33,0.09]09],[0.3,0.33,0.09],[0.5,0.33,0.09]
     properties = ['yield_stress_ZZ','yield_stress_XX','yield_stress_XY','yield_stress_XZ','Ex','Ez','Gxy','Gxz','Pxz','Pyx']
@@ -13,8 +16,8 @@ def Calculate_Properties(input):
     for property in properties:
 
         # Load the model and the transformer
-        model = load(f'../data/models_saved/{property}_model.joblib')
-        poly = load(f'../data/models_saved/{property}_poly_transformer.joblib')
+        model = load(module_path / f'models_saved/{property}_model.joblib')
+        poly = load(module_path / f'models_saved/{property}_poly_transformer.joblib')
 
         # # New data
         # new_data = np.array([[0.4,0.33,0.09]])  # Example values
@@ -31,7 +34,7 @@ def Calculate_Properties(input):
     # Predict Hardening
 
     # Load plastic strain points from npy:
-    plastic_strain_average_list = np.load('../data/plastic_strain_average_list.npy')
+    plastic_strain_average_list = np.load(module_path / 'models_saved/plastic_strain_average_list.npy')
 
     shape = (len(input), len(plastic_strain_average_list))
     Hardening_2D_array = np.zeros(shape)
@@ -39,8 +42,8 @@ def Calculate_Properties(input):
     for i in range(0,len(plastic_strain_average_list)):
 
         # Load the model and the transformer
-        model = load(f'../data/models_saved/hardening_{i}_model.joblib')
-        poly = load(f'../data/models_saved/{property}_poly_transformer.joblib')
+        model = load(module_path / f'models_saved/hardening_{i}_model.joblib')
+        poly = load(module_path / f'models_saved/hardening_{i}_poly_transformer.joblib')
 
 
         # Transform the input using the loaded transformer

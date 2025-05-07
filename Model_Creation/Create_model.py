@@ -7,7 +7,7 @@ from scipy.io import loadmat
 
 #read a matlab struct from a mat file and save it into a pd dataframe
 
-mat = loadmat('../input/microstructures_object_array_final.mat')
+mat = loadmat('./microstructures_object_array_final.mat')
 raw_rows = mat['final_microstructure_array'][0]
 
 column_names = raw_rows[0].dtype.names
