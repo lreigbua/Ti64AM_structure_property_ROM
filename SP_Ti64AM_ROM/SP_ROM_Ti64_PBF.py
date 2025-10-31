@@ -100,7 +100,7 @@ def write_inp(prop_dict, output_file = None, name = 'Material-1'):
 *Damage Initiation, criterion=JOHNSON COOK
  -0.09, 0.25, -0.5,   0.,   0.,   0.,   0.,   0.
 *Damage Evolution, type=DISPLACEMENT
- 0.05,
+ 0.1,
 *Elastic, type=ENGINEERING CONSTANTS
 {prop_dict['Ex']},{prop_dict['Ex']},{prop_dict['Ez']}, {prop_dict['Pyx']}, {prop_dict['Pxz']}, {prop_dict['Pxz']}, {prop_dict['Gxy']}, {prop_dict['Gxz']}
 {prop_dict['Gxz']},
