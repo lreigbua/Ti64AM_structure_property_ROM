@@ -1,7 +1,4 @@
 import numpy as np
-
-import sys
-sys.path.insert(0, '../')
 import SP_Ti64AM_ROM
 
 # The input is a 2D array of microstructure parameters. Each row is a microstructure
