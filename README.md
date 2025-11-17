@@ -1,4 +1,4 @@
-# Structure-Propery Model of Additively Manufactured Ti64
+# Structure-Property Model of Additively Manufactured Ti64
 
 ## Introduction
 
