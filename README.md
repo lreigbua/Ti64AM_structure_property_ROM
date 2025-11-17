@@ -23,11 +23,13 @@ The code to generate the database using CP simulations can be found in: https://
 ## How to run example
 
 ```bash
-# Download repository
+# Download repository and build
 git clone https://github.com/lreigbua/Ti64AM_structure_property_ROM.git
+cd Ti64AM_structure_property_ROM
+pip install -e .
 
 #Go to example folder
-cd Ti64AM_structure_property_ROM/examples
+cd examples
 
 #Run python script
 python example.py
